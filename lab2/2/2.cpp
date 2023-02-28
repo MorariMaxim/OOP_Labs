@@ -1,6 +1,7 @@
 #include <iostream>
 #include "GlobalFunctions.h"
 #include <algorithm>
+
 bool sortStudents(Student s1,Student s2) {
     return s1.getAverage() > s2.getAverage();
 }
@@ -11,7 +12,7 @@ int main()
     srand((unsigned)time(NULL));
     Student students[6];
     for (int i = 0; i < 6; i++) {
-        int randnum = rand() % 10;
+        float randnum = rand() % 10;
         if (randnum < 5) randnum += 6;
         students[i].setEnglish(randnum);        
         students[i].setHistory(randnum);
