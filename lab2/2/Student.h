@@ -1,14 +1,14 @@
 class Student {
 	char* name=nullptr;
-	int mathematics, english, history;
+	float mathematics, english, history;
 public:
-	int getMathsematics();
-	char* getName();
-	int getEnglish();
-	int getHistory();
+	float getMathsematics();
+	float getEnglish();
+	float getHistory();
 	float getAverage();
-	void setMathsematics(int grade);
-	void setEnglish(int grade);
-	void setHistory(int grade);
+	char* getName();
+	void setMathsematics(float grade);
+	void setEnglish(float grade);
+	void setHistory(float grade);
 	void setName(const char * toset);
 };
