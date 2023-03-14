@@ -10,10 +10,9 @@ int main()
 	Sort s2(10,3,10);
 	Sort s3(7,12,41,23,12,55,65,678);
 	Sort s4(var, 4);
-	std::cout << "Unsorted: "; s4.Print();
-	s4.QuickSort();
-	//s.BubbleSort();
-	//s.InsertSort();
-	std::cout << "Sorted  : "; s4.Print();
-
+	std::cout << "Unsorted: "; s.Print();
+	s.QuickSort(true);
+	//s.BubbleSort(true);
+	//s.InsertSort(true);
+	std::cout << "Sorted  : "; s.Print();
 } 
