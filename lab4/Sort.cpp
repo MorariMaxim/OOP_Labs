@@ -4,6 +4,9 @@
 #include "Sort.h"
 #include <queue>
 
+
+
+
 Sort::Sort(int num, int min, int max)
 {
 	srand(time(NULL));	
@@ -65,13 +68,24 @@ void Sort::InsertSort(bool ascendent)
 	{
 		key = list[i];
 		j = i - 1; 
-		while (j >= 0 && list[j] > key)
-		{
-			list[j + 1] = list[j];
-			j = j - 1;
+		if (ascendent) {
+			while (j >= 0 && list[j] > key)
+			{
+				list[j + 1] = list[j];
+				j = j - 1;
+			}
 		}
+		else {
+			while (j >= 0 && list[j] < key)
+			{
+				list[j + 1] = list[j];
+				j = j - 1;
+			}
+		}
+		
 		list[j + 1] = key;
 	}
+
 }
 int compare(const void* a, const void* b)
 {
@@ -87,19 +101,40 @@ int compare(const void* a, const void* b)
 }
 void Sort::QuickSort(bool ascendent)
 {
+
 	qsort(list, count, sizeof(int), compare);
+	if (!ascendent) {
+		int temp;
+		for (int i = 0; i < count / 2; i++) {
+			temp = list[i];
+			list[i] = list[count - i - 1];
+			list[count - i - 1] = temp;
+		}
+	}
 }
  
 void Sort::BubbleSort(bool ascendent){
 	int i, j,temp;
-	for (i = 0; i < count - 1; i++) 
+	if (ascendent) {
+		for (i = 0; i < count - 1; i++)
 
-	for (j = 0; j < count - i - 1; j++)
-		if (list[j] > list[j + 1]) {
-			temp = list[j];
-			list[j] = list[j + 1];
-			list[j + 1] = temp;
-		} 		
+			for (j = 0; j < count - i - 1; j++)
+				if (list[j] > list[j + 1]) {
+					temp = list[j];
+					list[j] = list[j + 1];
+					list[j + 1] = temp;
+				}
+	}
+	else {
+		for (i = 0; i < count - 1; i++)
+
+			for (j = 0; j < count - i - 1; j++)
+				if (list[j] < list[j + 1]) {
+					temp = list[j];
+					list[j] = list[j + 1];
+					list[j + 1] = temp;
+				}
+	}
 }
 
 void Sort::Print()
