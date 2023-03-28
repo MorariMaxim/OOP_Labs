@@ -19,7 +19,6 @@ int BMW::getSpeed(int x)
         return speed[x];
     return -1;
 }
-
 int BMW::getConsumption()
 {
     return consumption;

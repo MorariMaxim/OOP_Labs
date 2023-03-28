@@ -19,7 +19,7 @@ int main()
     c.AddCar(new Fiat());
 
     c.AddCar(new RangeRover());
-     
+
     c.Race();
     c.ShowFinalRanks();
     c.ShowWhoDidNotFinish();

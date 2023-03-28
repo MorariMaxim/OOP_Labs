@@ -2,7 +2,7 @@
 
 Seat::Seat() {
     name = "Seat";
-    speed[0] = 1;
+    speed[0] = 2;
     speed[1] = 1;
     speed[2] = 1;
     fuel = 100;

@@ -2,7 +2,7 @@
 
 Fiat::Fiat() {
     name = "Fiat";
-    speed[0] = 1;
+    speed[0] = 3;
     speed[1] = 1;
     speed[2] = 1;
     fuel = 100;

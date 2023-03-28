@@ -1,7 +1,7 @@
 #include "RangeRover.h"
 RangeRover::RangeRover() {
     name = "RangeRover";
-    speed[0] = 2;
+    speed[0] = 4;
     speed[1] = 1;
     speed[2] = 1;
     fuel = 100;

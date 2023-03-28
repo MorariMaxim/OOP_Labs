@@ -1,2 +1,7 @@
-﻿  Volvo.cpp
-  main.vcxproj -> D:\Programms\projs\oop\lab6\main\x64\Debug\main.exe
+﻿  BMW.cpp
+  Circuit.cpp
+D:\Programms\projs\poo\lab6\main\Circuit.cpp(21,8): warning C4101: 'nfuel': unreferenced local variable
+D:\Programms\projs\poo\lab6\main\Circuit.cpp(39,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
+  main.vcxproj -> D:\Programms\projs\poo\lab6\main\x64\Debug\main.exe
