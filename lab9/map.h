@@ -22,8 +22,7 @@ public:
 template<class k,class v>
 class Map {
 
-private:	
-	node<k, v>* container; 
+private:		
 		
 	int add(const k& key,const v& val) {
 
@@ -37,13 +36,21 @@ private:
 			container = newcont;			
 			max *= 2;
 		}
-		container[count].key = key;
-		container[count].value = new Value(val);	
-		container[count].init = 1;
-		return count++;
+		for (size_t i = 0; i < max; i++)
+		{
+			if (!container[i].init) {
+				container[i].key = key;
+				container[i].value = new Value(val);
+				container[i].init = 1;
+				count++;
+				return i;
+			}
+		}
+		 
 	}
 		
 public:
+	node<k, v>* container;
 	int count;
 	int max;
 	class iterator {
@@ -95,7 +102,11 @@ public:
 	}
 	bool Delete(const k& key) {
 		int f = find(key);
-		if (f != -1) container[f].init = 0;
+		if (f != -1) {
+			container[f].init = 0;
+			count--;
+			return 1;
+		}
 		return	0;
 	}
 	bool Get(const k& key, v& value) {
@@ -115,7 +126,8 @@ public:
 		count = 0;
 	}
 	bool Includes(const Map<k, v>& map) {
-		for (auto [key_,value_,index_] : map) {			
+		Map<k, v> copy = map;
+		for (auto [key_,value_,index_] : copy) {			
 			if (find(key_) == -1) return 0;
 		}
 		return 1;
